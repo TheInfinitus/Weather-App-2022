@@ -50,9 +50,16 @@ function CitySearch(event) {
   axios.get(apiURL).then(DefaultTemperature);
 }
 function DefaultTemperature(response) {
+  console.log(response.data);
   let temperature = Math.round(response.data.main.temp);
   let heading = document.querySelector("h1");
   heading.innerHTML = `${temperature}°C`;
+  let humidity = Math.round(response.data.main.humidity);
+  let humidity_value = document.querySelector("#humidity-value");
+  humidity_value.innerHTML = `${humidity}%`;
+  let wind = Math.round(response.data.wind.speed);
+  let wind_value = document.querySelector("#wind-value");
+  wind_value.innerHTML = `${wind} mph`;
 }
 
 //Pa Hacerlo Bonito al Empezar
