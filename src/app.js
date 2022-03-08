@@ -60,6 +60,9 @@ function DefaultTemperature(response) {
   let wind = Math.round(response.data.wind.speed);
   let wind_value = document.querySelector("#wind-value");
   wind_value.innerHTML = `${wind} mph`;
+  let AirPressure = response.data.main.pressure;
+  let AirPressureValue = document.querySelector("#airpressure-value");
+  AirPressureValue.innerHTML = `${AirPressure}mb`;
 }
 
 //Pa Hacerlo Bonito al Empezar
