@@ -1,3 +1,5 @@
+//Display the current date and time using JavaScript: Tuesday 16:00
+
 let now = new Date();
 let weekdays = [
   "Sunday",
@@ -33,6 +35,8 @@ let minutes = now.getMinutes();
 let realDate = document.querySelector("#hourInfo");
 realDate.innerHTML = `${hour}:${minutes} - ${dayName}, ${date} ${monthName}, ${yearnumber}`;
 
+// when a user searches for a city (example: New York), it should display the name of the city on the result page and the current temperature of the city.
+
 let realCity = document.querySelector("#city-form");
 realCity.addEventListener("submit", CitySearch);
 
@@ -51,6 +55,8 @@ function DefaultTemperature(response) {
   heading.innerHTML = `${temperature}°C`;
 }
 
+//Pa Hacerlo Bonito al Empezar
+
 function StartingTemp(position) {
   let latitude = 51.7197711;
   let longitude = -1.9648097;
@@ -59,6 +65,8 @@ function StartingTemp(position) {
   axios.get(apiURL).then(DefaultTemperature);
 }
 StartingTemp();
+
+// Add a Current Location button. When clicking on it, it uses the Geolocation API to get your GPS coordinates and display and the city and current temperature using the OpenWeather API.
 
 function navigatorActioning(event) {
   event.preventDefault();
