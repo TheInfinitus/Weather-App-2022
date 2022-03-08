@@ -69,7 +69,7 @@ function StartingPosition(position) {
   let latitude = position.coords.latitude;
   let longitude = position.coords.longitude;
   let apiKey = "4ef94b768e7d2f21afad485d2138b2d7";
-  let apiURL = `http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
+  let apiURL = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
   axios.get(apiURL).then(CurrentValues);
 }
 
@@ -81,3 +81,6 @@ function CurrentValues(response) {
   let CityName = document.querySelector("h2");
   CityName.innerHTML = `${CurrentCity}`;
 }
+
+let GeoCity = document.querySelector(".default-button");
+GeoCity.addEventListener("click", navigatorActioning);
