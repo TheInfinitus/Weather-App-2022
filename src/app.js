@@ -50,3 +50,12 @@ function DefaultTemperature(response) {
   let heading = document.querySelector("h1");
   heading.innerHTML = `${temperature}°C`;
 }
+
+function StartingTemp(position) {
+  let latitude = 51.7197711;
+  let longitude = -1.9648097;
+  let apiKey = "4ef94b768e7d2f21afad485d2138b2d7";
+  let apiURL = `http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
+  axios.get(apiURL).then(DefaultTemperature);
+}
+StartingTemp();
