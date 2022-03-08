@@ -63,6 +63,9 @@ function DefaultTemperature(response) {
   let AirPressure = response.data.main.pressure;
   let AirPressureValue = document.querySelector("#airpressure-value");
   AirPressureValue.innerHTML = `${AirPressure}mb`;
+  let weather_description = response.data.weather[0].main;
+  let weather_descriptionAxio = document.querySelector("#DescriptionWeather");
+  weather_descriptionAxio.innerHTML = `${weather_description}`;
 }
 
 //Pa Hacerlo Bonito al Empezar
