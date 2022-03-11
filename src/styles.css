@@ -79,6 +79,10 @@
   font-weight: 700;
 }
 
+.real-main-icon {
+  height: 62px;
+}
+
 .temperature-description {
   margin: 0;
   position: relative;

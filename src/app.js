@@ -66,6 +66,11 @@ function DefaultTemperature(response) {
   let weather_description = response.data.weather[0].main;
   let weather_descriptionAxio = document.querySelector("#DescriptionWeather");
   weather_descriptionAxio.innerHTML = `${weather_description}`;
+  let iconElement = document.querySelector(".real-main-icon");
+  iconElement.setAttribute(
+    "src",
+    `media/Exported/${response.data.weather[0].icon}.svg`
+  );
 }
 
 //Pa Hacerlo Bonito al Empezar
