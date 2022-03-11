@@ -106,6 +106,23 @@ function CurrentValues(response) {
   let CurrentCity = response.data.name;
   let CityName = document.querySelector("h2");
   CityName.innerHTML = `${CurrentCity}`;
+  let humidity = Math.round(response.data.main.humidity);
+  let humidity_value = document.querySelector("#humidity-value");
+  humidity_value.innerHTML = `${humidity}%`;
+  let wind = Math.round(response.data.wind.speed);
+  let wind_value = document.querySelector("#wind-value");
+  wind_value.innerHTML = `${wind} mph`;
+  let AirPressure = response.data.main.pressure;
+  let AirPressureValue = document.querySelector("#airpressure-value");
+  AirPressureValue.innerHTML = `${AirPressure}mb`;
+  let weather_description = response.data.weather[0].main;
+  let weather_descriptionAxio = document.querySelector("#DescriptionWeather");
+  weather_descriptionAxio.innerHTML = `${weather_description}`;
+  let iconElement = document.querySelector(".real-main-icon");
+  iconElement.setAttribute(
+    "src",
+    `media/Exported/${response.data.weather[0].icon}.svg`
+  );
 }
 
 let GeoCity = document.querySelector(".default-button");
