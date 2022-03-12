@@ -38,19 +38,24 @@ realDate.innerHTML = `${hour}:${minutes} - ${dayName}, ${date} ${monthName}, ${y
 // when a user searches for a city (example: New York), it should display the name of the city on the result page and the current temperature of the city.
 
 let realCity = document.querySelector("#city-form");
-realCity.addEventListener("submit", CitySearch);
+realCity.addEventListener("submit", handleSubmit);
 
-function CitySearch(event) {
-  event.preventDefault();
-  let city = document.querySelector(".main-city");
-  let cityResult = document.querySelector("#search-engine");
-  city.innerHTML = cityResult.value;
+function CitySearch(city) {
   let apiKey = "4ef94b768e7d2f21afad485d2138b2d7";
-  let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${cityResult.value}&appid=${apiKey}&units=metric`;
+  let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiURL).then(DefaultTemperature);
 }
+
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityResult = document.querySelector("#search-engine");
+  CitySearch(cityResult.value);
+}
+
 function DefaultTemperature(response) {
-  console.log(response.data);
+  let CurrentCity = response.data.name;
+  let CityName = document.querySelector("h2");
+  CityName.innerHTML = `${CurrentCity}`;
   let temperature = Math.round(response.data.main.temp);
   let heading = document.querySelector("h1");
   heading.innerHTML = `${temperature}°C`;
