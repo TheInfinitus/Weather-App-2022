@@ -71,6 +71,7 @@ function DefaultTemperature(response) {
     "src",
     `media/Exported/${response.data.weather[0].icon}.svg`
   );
+  celsiusTemperature = response.data.main.temp;
 }
 
 //Pa Hacerlo Bonito al Empezar
@@ -127,3 +128,20 @@ function CurrentValues(response) {
 
 let GeoCity = document.querySelector(".default-button");
 GeoCity.addEventListener("click", navigatorActioning);
+
+// Fahrenheit Function
+
+let celsiusTemperature = null;
+
+function FahrenheitFunction() {
+  let checkbox = document.querySelector('input[type="checkbox"]');
+  if (checkbox.checked == true) {
+    let farenheitDisplay = document.querySelector("h1");
+    let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+    farenheitDisplay.innerHTML = Math.round(fahrenheitTemperature) + "°F";
+  } else {
+    let farenheitDisplay = document.querySelector("h1");
+    fahrenheitTemperature = celsiusTemperature;
+    farenheitDisplay.innerHTML = Math.round(celsiusTemperature) + "°C";
+  }
+}
