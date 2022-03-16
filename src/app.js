@@ -35,6 +35,35 @@ let minutes = now.getMinutes();
 let realDate = document.querySelector("#hourInfo");
 realDate.innerHTML = `${hour}:${minutes} - ${dayName}, ${date} ${monthName}, ${yearnumber}`;
 
+// Forecast JS
+
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row next-days-info">`;
+  let days = ["Thur", "Fri", "Sat", "Sun", "Mon"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+            <div class="col-2 left-weekdays">
+              <div class="day-1-day">
+                ${day}
+                <br />
+                <img
+                  class="day-1-icon"
+                  src="https://img.icons8.com/nolan/64/partly-cloudy-day.png"
+                />
+                <br />
+                <div class="day-1-temperature">4°C</div>
+              </div>
+            </div>
+`;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+displayForecast();
+
 // when a user searches for a city (example: New York), it should display the name of the city on the result page and the current temperature of the city.
 
 let realCity = document.querySelector("#city-form");

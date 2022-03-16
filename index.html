@@ -71,7 +71,7 @@
           </div>
         </span>
 
-        <div class="next-days">
+        <div class="next-days" id="forecast">
           <div class="row next-days-info">
             <div class="col-2 left-weekdays">
               <div class="day-1-day">
@@ -82,67 +82,7 @@
                   src="https://img.icons8.com/nolan/64/partly-cloudy-day.png"
                 />
                 <br />
-                <div class="day-1-temperature">4C</div>
-              </div>
-            </div>
-            <div class="col-2">
-              <div class="day-2-day">
-                Tue
-                <br />
-                <img
-                  class="day-2-icon"
-                  src="https://img.icons8.com/nolan/64/rain.png"
-                />
-                <br />
-                <div class="day-2-temperature">5C</div>
-              </div>
-            </div>
-            <div class="col-2">
-              <div class="day-3-day">
-                Wed
-                <br />
-                <img
-                  class="day-3-icon"
-                  src="https://img.icons8.com/nolan/64/sun.png"
-                />
-                <br />
-                <div class="day-3-temperature">3C</div>
-              </div>
-            </div>
-            <div class="col-2">
-              <div class="day-4-day">
-                Thu
-                <br />
-                <img
-                  class="day-4-icon"
-                  src="https://img.icons8.com/nolan/64/snow.png"
-                />
-                <br />
-                <div class="day-4-temperature">6C</div>
-              </div>
-            </div>
-            <div class="col-2">
-              <div class="day-5-day">
-                Fri
-                <br />
-                <img
-                  class="day-5-icon"
-                  src="https://img.icons8.com/nolan/64/rain.png"
-                />
-                <br />
-                <div class="day-5-temperature">5C</div>
-              </div>
-            </div>
-            <div class="col-2 right-weekdays">
-              <div class="day-6-day">
-                Tue
-                <br />
-                <img
-                  class="day-6-icon"
-                  src="https://img.icons8.com/nolan/64/rain.png"
-                />
-                <br />
-                <div class="day-6-temperature">4C</div>
+                <div class="day-1-temperature">4°C</div>
               </div>
             </div>
           </div>
@@ -174,7 +114,7 @@
       <span class="extra-bar"></span>
 
       <label class="Toggle">
-        <input type="checkbox" onclick="FahrenheitFunction()" />
+        <input type="checkbox" id="myCheck" onclick="FahrenheitFunction()" />
         <span class="slider"></span>
       </label>
     </div>
