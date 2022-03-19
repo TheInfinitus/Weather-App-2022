@@ -164,6 +164,7 @@
   left: 612.3px;
   font-size: 18px;
   opacity: 0.6;
+  pointer-events: none;
 }
 
 .default-button {
@@ -272,4 +273,5 @@ input:checked + .slider:before {
   display: block;
   margin: 0px;
   content: "";
+  pointer-events: none;
 }
