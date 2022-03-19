@@ -155,29 +155,43 @@ function FahrenheitFunction() {
 
 // Forecast JS
 
+function forecastDayFormat(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tues", "Wed", "Thu", "Fri", "Sat"];
+  return days[day];
+}
+
 function displayForecast(response) {
-  console.log(response.data.daily);
+  let forecast = response.data.daily;
+
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row next-days-info">`;
-  let days = ["Thur", "Fri", "Sat", "Sun", "Mon", "Tues"];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
+
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `
             <div class="col-2 left-weekdays">
               <div class="day-1-day">
-                ${day}
+                ${forecastDayFormat(forecastDay.dt)}
                 <br />
                 <img
                   class="day-1-icon"
                   src="https://img.icons8.com/nolan/64/partly-cloudy-day.png"
                 />
                 <br />
-                <span class="day-1-max-temperature"><strong> 4°C </strong></span>
-                <span class="day-1-min-temperature">  3°C</span>
+                <span class="day-1-max-temperature"><strong> ${Math.round(
+                  forecastDay.temp.max
+                )}°C </strong></span>
+                <span class="day-1-min-temperature">  ${Math.round(
+                  forecastDay.temp.min
+                )}°C</span>
               </div>
             </div>
 `;
+    }
   });
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
