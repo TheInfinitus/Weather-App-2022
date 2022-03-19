@@ -287,3 +287,7 @@ input:checked + .slider:before {
   left: 2px;
   font-size: 14.5px;
 }
+
+.day-1-icon {
+  height: 65px;
+}

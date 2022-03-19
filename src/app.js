@@ -179,12 +179,12 @@ function displayForecast(response) {
                 <br />
                 <img
                   class="day-1-icon"
-                  src="https://img.icons8.com/nolan/64/partly-cloudy-day.png"
+                  src="media/Exported/${forecastDay.weather[0].icon}.svg"
                 />
                 <br />
-                <span class="day-1-max-temperature"><strong> ${Math.round(
+                <span class="day-1-max-temperature"> ${Math.round(
                   forecastDay.temp.max
-                )}°C </strong></span>
+                )}°C </span>
                 <span class="day-1-min-temperature">  ${Math.round(
                   forecastDay.temp.min
                 )}°C</span>
@@ -193,6 +193,7 @@ function displayForecast(response) {
 `;
     }
   });
+
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
