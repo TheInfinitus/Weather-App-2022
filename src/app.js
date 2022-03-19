@@ -173,7 +173,8 @@ function displayForecast(response) {
                   src="https://img.icons8.com/nolan/64/partly-cloudy-day.png"
                 />
                 <br />
-                <div class="day-1-temperature">4°C</div>
+                <span class="day-1-max-temperature"><strong> 4°C </strong></span>
+                <span class="day-1-min-temperature">  3°C</span>
               </div>
             </div>
 `;

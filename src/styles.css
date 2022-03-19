@@ -275,3 +275,15 @@ input:checked + .slider:before {
   content: "";
   pointer-events: none;
 }
+
+.day-1-max-temperature {
+  position: relative;
+  right: 6px;
+  font-size: 14.5px;
+}
+
+.day-1-min-temperature {
+  position: relative;
+  left: 2px;
+  font-size: 14.5px;
+}
